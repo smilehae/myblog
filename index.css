@@ -61,6 +61,12 @@ main {
   background: url(./source/bull.jpg) center center;
   background-size: cover;
 }
+a {
+  text-decoration: none;
+}
+a #logo_title {
+  color: black;
+}
 #profile_container,
 #profile {
   text-align: center;
@@ -142,6 +148,19 @@ main {
 }
 .main_card .content {
   color: gray;
+}
+
+.write_btn {
+  position: absolute;
+  background-color: rosybrown;
+  width: 80px;
+  height: 80px;
+  bottom: 5rem;
+  right: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {

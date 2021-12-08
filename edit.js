@@ -27,6 +27,7 @@ setPostData();
 writeSpace.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     console.log(writeSpace.value);
+    e.stopPropagation();
   }
 });
 submitBtn.addEventListener("click", (e) => {
