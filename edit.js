@@ -29,6 +29,7 @@ writeSpace.addEventListener("keydown", (e) => {
     console.log(writeSpace.value);
   }
 });
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (e) => {
   postData = getPostData();
+  //   document.location.href = "edit.php";
 });
