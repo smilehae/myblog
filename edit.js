@@ -1,5 +1,7 @@
-const writeSpace = document.querySelector("input[type='textarea']");
-const inputContainer = Array.from(document.querySelectorAll("input, select"));
+const writeSpace = document.querySelector("textarea");
+const inputContainer = Array.from(
+  document.querySelectorAll("input, select, textarea")
+);
 const submitBtn = document.querySelector("input[type='submit']");
 let postData = {};
 postData = JSON.parse(localStorage.getItem("postData", postData)) || {};
@@ -26,11 +28,11 @@ setPostData();
 
 writeSpace.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
-    console.log(writeSpace.value);
-    e.stopPropagation();
+    e.preventDefault();
+    writeSpace.value += "\n";
+    return false;
   }
 });
 submitBtn.addEventListener("click", (e) => {
   postData = getPostData();
-  //   document.location.href = "edit.php";
 });
