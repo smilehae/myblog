@@ -1,0 +1,35 @@
+main {
+  padding: 0;
+}
+.input_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+input {
+  height: 40px;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+input[type="textarea"] {
+  width: 100%;
+  height: 700px;
+  line-height: 1.5;
+  white-space: pre-line;
+  position: relative;
+  top: -1px;
+}
+input[type="submit"] {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 200px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: rosybrown;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
