@@ -1,0 +1,82 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  /* font-family: "Gowun Dodum", sans-serif; */
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+button {
+  border: 1px solid gainsboro;
+  background-color: seashell;
+  cursor: pointer;
+}
+
+header {
+  padding: 1rem;
+  border-bottom: 1px solid gainsboro;
+}
+nav {
+  float: left;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+main {
+  position: relative;
+  padding: 2rem;
+}
+
+.hl {
+  color: palevioletred;
+}
+/* 왼쪽 탑 컨테이너 */
+.right_top_btn_container {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  width: 90px;
+  justify-content: space-between;
+}
+.right_top_btn_container button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.setting_btn {
+  background: url(./source/bull.jpg) center center;
+  background-size: cover;
+}
+#profile_container,
+#profile {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+#profile_container {
+  border-bottom: 1px solid gainsboro;
+}
+.menu {
+  padding-top: 2rem;
+  cursor: pointer;
+}
+
+.profile_img {
+  background: url(./source/bull.jpg) center center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.main_header {
+  display: flex;
+  position: absolute;
+  top: -32px;
+  left: 330px;
+}
+.main_header h3 {
+  margin-right: 1rem;
+  border-bottom: 6px solid rosybrown;
+  padding: 0 0.5rem;
+}
