@@ -51,3 +51,6 @@ main {
 .btn_container .del_btn:hover {
   color: brown;
 }
+.hidden_pw {
+  display: none;
+}

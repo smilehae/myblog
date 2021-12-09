@@ -17,9 +17,10 @@
   </head>
   <body>
     <header>
-      <a href="./index.html"
-      ><h1 id="logo_title">Me<span class="hl">Hey</span></h1></a
-    >      <div class="right_top_btn_container">
+      <h1 id="logo_title"><a href="./index.php">
+        Me<span class="hl">Hey</span></a>
+      </h1>
+      <div class="right_top_btn_container">
         <button class="search_btn"><i class="fas fa-search"></i></button>
         <button class="setting_btn"></button>
       </div>
@@ -56,17 +57,46 @@
       <h3>부스러기</h3>
     </div>
     <div class="article_header">
-      <p class="category">전체</p>
-      <h2 class="title">시행착오를 겪으며 성장한 블로그 페이지 개발기</h2>
-      <p class="info">By <span class="nickname">smilehae</span>  <span class="date">2021.12.08 20:40</span></span></p>
-      <div class="btn_container">
-        <button class="edit_btn"><i class="far fa-edit"></i></button>
-        <button class="del_btn"><i class="far fa-trash-alt"></i></button>
-      </div>
-    </div>
-    <div class="article_body content">
-      <p>웹페이지를 많이 만들었어서 금방 완성할 수 있을 줄 알았는데, 생각보다 오랜 시간이 걸렸다.</p>
-    </div>
+      <?php
+        $id = $_GET['id'];
+        
+        //링크 연결
+        $conn = mysqli_connect("127.0.0.1","root","");
+        if(!$conn){
+          echo " link failure";
+          exit;
+        }
+
+        mysqli_query($conn,"use blog");
+        mysqli_set_charset($conn,"utf8");
+        $result = mysqli_query($conn,"select * from postdata where id='$id'");
+        $num = mysqli_num_rows($result);
+        if($num==0){
+          echo " 해당 게시물은 존재하지 않습니다.";
+          //바로 연결 닫고 메인 페이지로 연결
+          mysqli_close($conn);
+          header('Location: ./index.php');
+        }
+        else{
+          $data = mysqli_fetch_row($result);
+          echo "<p class='category'>$data[0]</p>
+          <h2 class='title'>$data[1]</h2>
+          <p class='info'>By <span class='nickname'>$data[2]</span>  <span class='date'>$data[6]</span></span></p>
+          <div class='btn_container'>
+            <button class='edit_btn'><i class='far fa-edit'></i></button>
+            <button class='del_btn'><i class='far fa-trash-alt'></i></button>
+          </div>
+        </div>
+        <p class='hidden_pw'>$data[3]</p>
+        <div class='article_body content'>
+          <p>$data[4]</p>
+        </div>";
+        }
+
+        mysqli_close($conn);
+
+      ?>
+      
   </main>
  </div>
   </body>

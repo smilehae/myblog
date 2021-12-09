@@ -16,9 +16,9 @@
   </head>
   <body>
     <header>
-      <a href="./index.html"
-        ><h1 id="logo_title">Me<span class="hl">Hey</span></h1></a
-      >
+      <h1 id="logo_title"><a href="./index.php">
+        Me<span class="hl">Hey</span></a>
+      </h1>
       <div class="right_top_btn_container">
         <button class="search_btn"><i class="fas fa-search"></i></button>
         <button class="setting_btn"></button>
@@ -57,54 +57,7 @@
         </div>
         <h2 class="main_title">전체 글</h2>
         <div class="main_container">
-          <!-- <div class="main_card">
-            <div class="image main_img_2"></div>
-            <h4 class="title">실수하지 않는 법</h4>
-            <p class="content">
-              사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
-              그래도 줄어들 .. 수 있지 않을까 하는 희망을 가져본다..!
-            </p>
-            <p class="sub_content">
-              <span class="nickname">By 미해</span>
-              <span class="date">2021.12.09</span>
-            </p>
-          </div>
-          <div class="main_card">
-            <div class="image main_img_1"></div>
-            <h4 class="title">실수하지 않는 법</h4>
-            <p class="content">
-              사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
-              그래도 줄어들 .. 수 있지 않을까 하는 희망을 가져본다..!
-            </p>
-            <p class="sub_content">
-              <span class="nickname">By 미해</span>
-              <span class="date">2021.12.09</span>
-            </p>
-          </div>
-          <div class="main_card">
-            <div class="image main_img_3"></div>
-            <h4 class="title">실수하지 않는 법</h4>
-            <p class="content">
-              사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
-              그래도 줄어들 .. 수 있지 않을까 하는 희망을 가져본다..!
-            </p>
-            <p class="sub_content">
-              <span class="nickname">By 미해</span>
-              <span class="date">2021.12.09</span>
-            </p>
-          </div>
-          <div class="main_card">
-            <div class="image main_img_5"></div>
-            <h4 class="title">실수하지 않는 법</h4>
-            <p class="content">
-              사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
-              그래도 줄어들 .. 수 있지 않을까 하는 희망을 가져본다..!
-            </p>
-            <p class="sub_content">
-              <span class="nickname">By 미해</span>
-              <span class="date">2021.12.09</span>
-            </p>
-          </div> -->
+        
           <?php
             //연결
             $conn= mysqli_connect("127.0.0.1","root","");
@@ -119,7 +72,10 @@
             while($data = mysqli_fetch_row($result)){
               echo " 
               <div class='main_card'>
-                <div class='image'></div>
+                <a href='subpage.php?id={$data[5]}'>
+                  <div class='image'></div>
+                </a>
+                
                 <h4 class='title'>$data[1]</h4>
                 <p class='content'>
                   $data[4]

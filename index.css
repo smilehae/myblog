@@ -63,10 +63,9 @@ main {
 }
 a {
   text-decoration: none;
-}
-a #logo_title {
   color: black;
 }
+
 #profile_container,
 #profile {
   text-align: center;
