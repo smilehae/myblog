@@ -57,27 +57,7 @@
         </div>
         <h2 class="main_title">전체 글</h2>
         <div class="main_container">
-          <div class="main_card">
-            <div class="image main_img_1"></div>
-            <h4 class="title">시행착오를 겪으며 성장한 블로그 페이지 개발기</h4>
-            <p class="content">
-              사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
-              그래도 줄어들 .. 수 있지 않을까 하는 희망을 가져본다..! 사실 잘
-              모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는 그래도
-              줄어들 .. 수 있지 않을까 하는 희망을 가져본다..! 사실 잘 모르겠다.
-              그래도 하면서 점점 실력이 늘면 어이없는 실수는 그래도 줄어들 .. 수
-              있지 않을까 하는 희망을 가져본다..! 사실 잘 모르겠다. 그래도
-              하면서 점점 실력이 늘면 어이없는 실수는 그래도 줄어들 .. 수 있지
-              않을까 하는 희망을 가져본다..!사실 잘 모르겠다. 그래도 하면서 점점
-              실력이 늘면 어이없는 실수는 그래도 줄어들 .. 수 있지 않을까 하는
-              희망을 가져본다..!
-            </p>
-            <p class="sub_content">
-              <span class="nickname">By 미해</span>
-              <span class="date">2021.12.09</span>
-            </p>
-          </div>
-          <div class="main_card">
+          <!-- <div class="main_card">
             <div class="image main_img_2"></div>
             <h4 class="title">실수하지 않는 법</h4>
             <p class="content">
@@ -90,7 +70,7 @@
             </p>
           </div>
           <div class="main_card">
-            <div class="image main_img_2"></div>
+            <div class="image main_img_1"></div>
             <h4 class="title">실수하지 않는 법</h4>
             <p class="content">
               사실 잘 모르겠다. 그래도 하면서 점점 실력이 늘면 어이없는 실수는
@@ -124,7 +104,35 @@
               <span class="nickname">By 미해</span>
               <span class="date">2021.12.09</span>
             </p>
-          </div>
+          </div> -->
+          <?php
+            //연결
+            $conn= mysqli_connect("127.0.0.1","root","");
+            if(!$conn){
+              echo "link failure";
+              exit;
+            }
+            mysqli_query($conn,"use blog");
+            mysqli_set_charset($conn,"utf8");
+            $result = mysqli_query($conn,"select * from postdata");
+            $num= mysqli_num_rows($result);
+            while($data = mysqli_fetch_row($result)){
+              echo " 
+              <div class='main_card'>
+                <div class='image'></div>
+                <h4 class='title'>$data[1]</h4>
+                <p class='content'>
+                  $data[4]
+                </p>
+                <p class='sub_content'>
+                    <span class='nickname'>By $data[2]</span>
+                    <span class='date'>$data[6]</span>
+                </p>
+              </div>";
+            }
+            mysqli_close($conn);
+            
+          ?>
         </div>
       </main>
     </div>

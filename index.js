@@ -51,7 +51,7 @@ function showArticles() {
   });
 }
 
-showArticles();
+//showArticles();
 {
   /* <div class="main_card">
 <div class="image main_img_2"></div>
