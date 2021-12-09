@@ -167,19 +167,24 @@ a #logo_title {
   text-overflow: ellipsis;
 }
 
-.write_btn {
-  position: absolute;
+button.write_btn {
+  position: fixed;
   background-color: rosybrown;
   width: 80px;
   height: 80px;
-  bottom: 5rem;
-  right: 5rem;
+  bottom: 3rem;
+  right: 3rem;
   border-radius: 50%;
   font-size: 2rem;
   color: white;
   cursor: pointer;
+  border: 5px solid rgb(167, 126, 126);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
 }
-
+button.write_btn:hover {
+  background-color: black;
+  border: none;
+}
 @media (max-width: 1000px) {
   nav {
     display: none;
