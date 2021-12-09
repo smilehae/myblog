@@ -29,7 +29,7 @@ function getPostData() {
   });
 }
 
-getPostData();
+//getPostData();
 
 writeSpace.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
@@ -40,17 +40,17 @@ writeSpace.addEventListener("keydown", (e) => {
 });
 inputContainer.forEach((input) => {
   input.addEventListener("input", (e) => {
-    setPostData();
+    // setPostData();
   });
 });
 writeSpace.addEventListener("input", (e) => {
-  console.log(writeSpace.value);
+  // console.log(writeSpace.value);
 });
 
 submitBtn.addEventListener("click", (e) => {
   console.log(dateArea);
   // e.preventDefault();
-  setPostData();
+  // setPostData();
 });
 
 // document.querySelector("body").addEventListener("keydown", (e) => {

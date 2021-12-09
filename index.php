@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./index.css" />
     <script
       src="https://kit.fontawesome.com/5316a0a50e.js"
       crossorigin="anonymous"
@@ -13,6 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/index.css" />
+
   </head>
   <body>
     <header>
@@ -67,7 +68,7 @@
             }
             mysqli_query($conn,"use blog");
             mysqli_set_charset($conn,"utf8");
-            $result = mysqli_query($conn,"select * from postdata");
+            $result = mysqli_query($conn,"select * from postdata order by id");
             $num= mysqli_num_rows($result);
             while($data = mysqli_fetch_row($result)){
               echo " 

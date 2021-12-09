@@ -12,8 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./subpage.css">
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/subpage.css">
   </head>
   <body>
     <header>

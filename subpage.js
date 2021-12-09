@@ -15,7 +15,7 @@ function authorizePw() {
 
 editbtn.addEventListener("click", () => {
   if (authorizePw()) {
-    alert("수정가능!");
+    location.href = `./edit.php?id=${id}`;
   }
 });
 
