@@ -10,12 +10,14 @@
             $nickname = $_POST['nickname'];
             $password = $_POST['password'];
             $content=$_POST['content'];
+            $date=$_POST['date'];
 
             $conn = mysqli_connect("127.0.0.1","root");
             if(!$conn){
                 echo "link failed";
                 exit;
             }
+            echo $date;
             mysqli_query($conn,"use blog");
             mysqli_set_charset($conn,"utf8");
 
@@ -25,13 +27,13 @@
                 echo "해당 내용은 중복으로 한번만 들어갑니다.";
             }
             else{
-                $sql = "insert into postdata(category,title,nickname,password,content) values('$category','$title','$nickname','$password','$content')";
+                $sql = "insert into postdata(category,title,nickname,password,content,date) values('$category','$title','$nickname','$password','$content','$date')";
                 mysqli_query($conn,$sql);
             }
             
 
             mysqli_close($conn);
-            header('Location: ./index.html')
+            // header('Location: ./index.html')
     ?>
     </body>
 </html>

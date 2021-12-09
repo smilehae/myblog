@@ -1,4 +1,5 @@
 const writeSpace = document.querySelector("textarea");
+const dateArea = document.querySelector("input[type='hidden']");
 const inputContainer = Array.from(
   document.querySelectorAll("input, select, textarea")
 );
@@ -9,8 +10,13 @@ postData = JSON.parse(localStorage.getItem("postData", postData)) || {};
 function getPostData() {
   const postData = {};
   inputContainer.forEach((input) => {
-    if (input.id != "submit") postData[input.id] = input.value;
+    if (input.id != "submit" && input.name != "hidden")
+      postData[input.id] = input.value;
   });
+  const date = new Date();
+  const dateString = `${date.getFullYear()}.${date.getMonth()}.${date.getDate()}.`;
+  dateArea.value = dateString;
+  postData.date = dateString;
   localStorage.setItem("postData", JSON.stringify(postData));
   return postData;
 }
@@ -34,5 +40,7 @@ writeSpace.addEventListener("keydown", (e) => {
   }
 });
 submitBtn.addEventListener("click", (e) => {
+  console.log(dateArea);
+  // e.preventDefault();
   postData = getPostData();
 });
