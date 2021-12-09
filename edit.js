@@ -7,8 +7,8 @@ const submitBtn = document.querySelector("input[type='submit']");
 let postData = {};
 postData = JSON.parse(localStorage.getItem("postData", postData)) || {};
 
-function getPostData() {
-  const postData = {};
+// 데이터 저장
+function setPostData() {
   inputContainer.forEach((input) => {
     if (input.id != "submit" && input.name != "hidden")
       postData[input.id] = input.value;
@@ -18,11 +18,10 @@ function getPostData() {
   dateArea.value = dateString;
   postData.date = dateString;
   localStorage.setItem("postData", JSON.stringify(postData));
-  return postData;
 }
 
-// 새로고침했을때도 값이 있었음 좋겠다
-function setPostData() {
+// 새로고침했을때도 값 유지 ( 로컬데이터에 저장한 데이터 불러오기)
+function getPostData() {
   inputContainer.forEach((input) => {
     if (input.id != "submit") {
       input.value = postData[input.id];
@@ -30,7 +29,7 @@ function setPostData() {
   });
 }
 
-setPostData();
+getPostData();
 
 writeSpace.addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
@@ -39,8 +38,28 @@ writeSpace.addEventListener("keydown", (e) => {
     return false;
   }
 });
+inputContainer.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    setPostData();
+  });
+});
+writeSpace.addEventListener("input", (e) => {
+  console.log(writeSpace.value);
+});
+
 submitBtn.addEventListener("click", (e) => {
   console.log(dateArea);
   // e.preventDefault();
-  postData = getPostData();
+  setPostData();
 });
+
+// document.querySelector("body").addEventListener("keydown", (e) => {
+//   if (e.keyCode == "116") {
+//     getPostData();
+//     e.preventDefault();
+//   }
+// });
+
+// window.addEventListener("load", (e) => {
+//   getPostData();
+// });
