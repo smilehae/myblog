@@ -32,7 +32,7 @@ nav {
 }
 main {
   position: relative;
-  padding: 2rem 4rem;
+  padding: 2rem 3rem;
   transition: all 0.3s;
   flex: 1 1 auto;
 }
@@ -122,8 +122,22 @@ a #logo_title {
 .main_card {
   flex: 0 0 280px;
   cursor: pointer;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+.main_card .title {
+  max-height: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+.sub_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  color: rgb(163, 163, 163);
 }
 .main_card .image {
   width: 100%;
@@ -147,7 +161,10 @@ a #logo_title {
   background-size: cover;
 }
 .main_card .content {
-  color: gray;
+  color: rgb(88, 88, 88);
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .write_btn {
