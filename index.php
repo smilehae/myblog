@@ -72,7 +72,7 @@
             while($data = mysqli_fetch_row($result)){
               echo " 
               <div class='main_card'>
-                <a href='subpage.php?id={$data[5]}'>
+                <a href='./subpage.php?id={$data[5]}'>
                   <div class='image'></div>
                 </a>
                 
@@ -92,7 +92,7 @@
         </div>
       </main>
     </div>
-    <a href="./write_new.html">
+    <a href="./addpost.html">
       <button class="write_btn"><i class="fas fa-pencil-alt"></i></button>
     </a>
     <script src="./index.js"></script>

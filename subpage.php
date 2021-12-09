@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="./article.css">
+    <link rel="stylesheet" href="./subpage.css">
   </head>
   <body>
     <header>
@@ -87,6 +87,7 @@
             <button class='del_btn'><i class='far fa-trash-alt'></i></button>
           </div>
         </div>
+        <p class='hidden_id'>$data[5]</p>
         <p class='hidden_pw'>$data[3]</p>
         <div class='article_body content'>
           <p>$data[4]</p>
@@ -99,5 +100,6 @@
       
   </main>
  </div>
+ <script src="subpage.js"></script>
   </body>
 </html>
