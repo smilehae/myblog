@@ -17,7 +17,6 @@
                 echo "link failed";
                 exit;
             }
-            echo $date;
             mysqli_query($conn,"use blog");
             mysqli_set_charset($conn,"utf8");
 
@@ -33,7 +32,7 @@
             
 
             mysqli_close($conn);
-            // header('Location: ./index.html')
+            header('Location: ./index.html')
     ?>
     </body>
 </html>

@@ -1,5 +1,6 @@
 main {
   padding: 0;
+  padding: 1rem;
 }
 .input_container {
   display: grid;
@@ -9,7 +10,6 @@ input {
   height: 40px;
   border: 1px solid gray;
   border-collapse: collapse;
-  padding: 1rem;
 }
 textarea {
   width: 100%;
@@ -19,6 +19,9 @@ textarea {
   overflow-wrap: break-word;
   top: -1px;
   padding: 1rem;
+}
+form {
+  width: 90%;
 }
 input[type="submit"] {
   padding: 0;
