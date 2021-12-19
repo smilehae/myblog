@@ -109,6 +109,7 @@
               >$data[4]</textarea>";
 
               echo "<input type='text' name='id' id='id' value='$id' class='hide'>";
+              mysqli_close($conn);
             ?>
           <input type="submit" id="submit" value="게시물 올리기" />
         </form>

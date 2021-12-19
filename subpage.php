@@ -98,10 +98,13 @@
 
       ?>
   <div class="comment_edit">
-    <form action="#" method="POST">
+    <form action="addcomment.php" method="POST">
       <div>
-        <input type="text" placeholder="닉네임" name="nickname">
+        <input type="text" placeholder="닉네임" name="nickname" required>
         <input type="text" placeholder="비밀번호" name="pw">
+        <?php
+          echo "<input type='hidden' value='$id' name='id'>";
+        ?>
       </div>
       <textarea name="content">내용</textarea>
       <input type="submit" value="댓글달기">

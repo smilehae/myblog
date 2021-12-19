@@ -14,6 +14,7 @@
         exit;
     }
     mysqli_query($conn,"delete from postdata where id='$id'");
+    mysqli_close($conn);
     header('Location: ./index.php');
 
 ?>

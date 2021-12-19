@@ -27,6 +27,7 @@
         "update postdata set title='$title', nickname='$nickname', password='$password',
          content='$content' where id='$id'");
          echo "데이터 변경이 완료되었습니다.";
+         mysqli_close($conn);
          header("Location: ./index.php");
 
 
