@@ -29,6 +29,7 @@ main {
 }
 .article_body {
   padding: 1rem;
+  height: 70%;
 }
 
 .btn_container {
@@ -54,4 +55,70 @@ main {
 .hidden_pw,
 .hidden_id {
   display: none;
+}
+
+.comment_edit {
+  border: 5px solid gainsboro;
+  /* background-color: gainsboro; */
+  padding: 0.5rem;
+}
+.comment_edit div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.comment_edit div input {
+  border: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 1px solid gray;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+.comment_edit textarea {
+  width: 100%;
+  height: fit-content;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 0.5rem 0;
+}
+.comment {
+  padding: 0.5rem;
+  border-top: 1px solid gainsboro;
+  border-collapse: collapse;
+  position: relative;
+}
+.comment .nickname {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.comment .button_container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.comment button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 0.1s;
+}
+.comment button:first-child:hover {
+  color: white;
+  background-color: olivedrab;
+}
+.comment button:last-child:hover {
+  color: white;
+  background-color: rgb(255, 103, 103);
+}
+@media (min-width: 1300px) {
+  .comment_edit div {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
 }

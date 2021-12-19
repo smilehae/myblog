@@ -97,9 +97,45 @@
         mysqli_close($conn);
 
       ?>
-      
-  </main>
+  <div class="comment_edit">
+    <form action="#" method="POST">
+      <div>
+        <input type="text" placeholder="닉네임" name="nickname">
+        <input type="text" placeholder="비밀번호" name="pw">
+      </div>
+      <textarea name="content">내용</textarea>
+      <input type="submit" value="댓글달기">
+    </form>
+  </div>
+
+ <div class="comment_container">
+   <div class="comment">
+      <p class="nickname">미해</p>
+      <p class="content">나도나도 너무 재밌어!</p>
+      <div class="button_container">
+        <button class='edit_btn'><i class='far fa-edit'></i></button>
+        <button class='del_btn'><i class='far fa-trash-alt'></i></button>
+      </div>
+    </div>
+   <div class="comment">
+      <p class="nickname">미해</p>
+      <p class="content">나도나도 너무 재밌어!</p>
+   </div>
+   <div class="comment">
+      <p class="nickname">미해</p>
+      <p class="content">나도나도 너무 재밌어!</p>
+   </div>
+   <div class="comment">
+      <p class="nickname">미해</p>
+      <p class="content">나도나도 너무 재밌어!</p>
+   </div>
+   <div class="comment">
+      <p class="nickname">미해</p>
+      <p class="content">나도나도 너무 재밌어!</p>
+   </div>
  </div>
+</main>
+  
  <script src="subpage.js"></script>
   </body>
 </html>

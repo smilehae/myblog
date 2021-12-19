@@ -69,7 +69,6 @@
             mysqli_query($conn,"use blog");
             mysqli_set_charset($conn,"utf8");
             $result = mysqli_query($conn,"select * from postdata order by id");
-            $num= mysqli_num_rows($result);
             while($data = mysqli_fetch_row($result)){
               echo " 
               <div class='main_card'>
