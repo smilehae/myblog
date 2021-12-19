@@ -4,15 +4,15 @@
     </head>
     <body>
         <?php
-
+           
             $category = $_POST['category'];
             $title = $_POST['title'];
             $nickname = $_POST['nickname'];
             $password = $_POST['password'];
             $content=$_POST['content'];
-            $date=$_POST['date'];
+            $date=date("Y.m.d");
             $background = $_POST['image'];
-
+            
             $conn = mysqli_connect("127.0.0.1","root");
             if(!$conn){
                 echo "link failed";
