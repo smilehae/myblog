@@ -119,7 +119,7 @@
       exit;
     }
     mysqli_query($conn,"use blog");
-    $result = mysqli_query($conn,"select * from comments where pid =$id");
+    $result = mysqli_query($conn,"select * from comments where pid =$id order by id");
     while($data= mysqli_fetch_row($result)){
       echo
         " 

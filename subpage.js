@@ -50,7 +50,7 @@ com_edit.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (authorizeComment(btn)) {
       const index = btn.dataset.index;
-      // location.href = `./editcomment.php?id=${index}`;
+      location.href = `./editcomment.php?id=${index}&pid=${pid}`;
     }
   });
 });
