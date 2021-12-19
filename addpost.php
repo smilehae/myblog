@@ -11,6 +11,7 @@
             $password = $_POST['password'];
             $content=$_POST['content'];
             $date=$_POST['date'];
+            $background = $_POST['image'];
 
             $conn = mysqli_connect("127.0.0.1","root");
             if(!$conn){
@@ -26,8 +27,11 @@
                 echo "해당 내용은 중복으로 한번만 들어갑니다.";
             }
             else{
-                $sql = "insert into postdata(category,title,nickname,password,content,date) values('$category','$title','$nickname','$password','$content','$date')";
-                mysqli_query($conn,$sql);
+                $sql = "insert into postdata(category,title,nickname,password,content,date,imagename) values('$category','$title','$nickname','$password','$content','$date','$background')";
+                $result = mysqli_query($conn,$sql);
+                if($result){
+                    // echo "success!";
+                }
             }
             
 

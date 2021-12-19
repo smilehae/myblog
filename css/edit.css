@@ -36,7 +36,19 @@ input[type="submit"] {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  margin-top: 1rem;
 }
 .hide {
   display: none;
+}
+.background_radio {
+  display: flex;
+}
+.background_radio label {
+  position: relative;
+  top: -15px;
+  margin-right: 10px;
+}
+legend {
+  padding: 0 0.5rem;
 }

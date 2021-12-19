@@ -59,6 +59,7 @@
         <h2 class="main_title">전체 글</h2>
         <div class="main_container">
         
+        
           <?php
             //연결
             $conn= mysqli_connect("127.0.0.1","root","");
@@ -73,7 +74,7 @@
               echo " 
               <div class='main_card'>
                 <a href='./subpage.php?id={$data[5]}'>
-                  <div class='image'></div>
+                  <div class='image $data[7]'></div>
                 </a>
                 
                 <h4 class='title'>$data[1]</h4>
