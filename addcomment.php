@@ -30,6 +30,7 @@
                 echo "트랜잭션 실패" .$conn->error;
             }
             mysqli_close($conn);
+            header('Location: ./index.php')
             ?>
     </body>
 </html>

@@ -106,36 +106,35 @@
           echo "<input type='hidden' value='$id' name='id'>";
         ?>
       </div>
-      <textarea name="content">내용</textarea>
+      <textarea name="content" placeholder="내용" required></textarea>
       <input type="submit" value="댓글달기">
     </form>
   </div>
 
  <div class="comment_container">
-   <div class="comment">
-      <p class="nickname">미해</p>
-      <p class="content">나도나도 너무 재밌어!</p>
-      <div class="button_container">
-        <button class='edit_btn'><i class='far fa-edit'></i></button>
-        <button class='del_btn'><i class='far fa-trash-alt'></i></button>
-      </div>
-    </div>
-   <div class="comment">
-      <p class="nickname">미해</p>
-      <p class="content">나도나도 너무 재밌어!</p>
-   </div>
-   <div class="comment">
-      <p class="nickname">미해</p>
-      <p class="content">나도나도 너무 재밌어!</p>
-   </div>
-   <div class="comment">
-      <p class="nickname">미해</p>
-      <p class="content">나도나도 너무 재밌어!</p>
-   </div>
-   <div class="comment">
-      <p class="nickname">미해</p>
-      <p class="content">나도나도 너무 재밌어!</p>
-   </div>
+  <?php
+    $conn = mysqli_connect("127.0.0.1","root");
+    if(!$conn){
+      echo "link failure";
+      exit;
+    }
+    mysqli_query($conn,"use blog");
+    $result = mysqli_query($conn,"select * from comments where pid =$id");
+    while($data= mysqli_fetch_row($result)){
+      echo
+        " 
+        <div class='comment'>
+          <p class='nickname'>$data[1]</p>
+          <p class='content'>$data[3]</p>
+          <div class='button_container'>
+            <button class='edit_btn'><i class='far fa-edit'></i></button>
+            <button class='del_btn'><i class='far fa-trash-alt'></i></button>
+          </div>
+        </div>
+        ";
+    }
+    mysqli_close($conn);
+  ?>
  </div>
 </main>
   
