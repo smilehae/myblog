@@ -126,9 +126,10 @@
         <div class='comment'>
           <p class='nickname'>$data[1]</p>
           <p class='content'>$data[3]</p>
+          <p class=' hidden pw' data-index='$data[0]'>$data[2]</p>
           <div class='button_container'>
-            <button class='edit_btn'><i class='far fa-edit'></i></button>
-            <button class='del_btn'><i class='far fa-trash-alt'></i></button>
+            <button class='edit_btn' data-index='$data[0]'><i class='far fa-edit'></i></button>
+            <button class='del_btn' data-index='$data[0]'><i class='far fa-trash-alt'></i></button>
           </div>
         </div>
         ";
